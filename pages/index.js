@@ -1,15 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import tableStyles from "../styles/app/table.module.css";
 
 export default function Home() {
+  const [timeZone, setTimeZone] = useState("");
   useEffect(() => {
-    axios.get("http://localhost:5000/api/now").then((res) => {
-      var data = res.data;
-      document.getElementById("timeZone").innerHTML =
-        "<h1>현재시간: " + data.now + "<h1>";
-    });
+    getTimeZone();
   }, []);
+
+  const getTimeZone = () => {
+    try {
+      axios.get("http://localhost:5000/api/now").then((res) => {
+        setTimeZone(res.data.now);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <table className={tableStyles.table}>
@@ -23,7 +30,9 @@ export default function Home() {
       <tbody>
         <tr>
           <td>
-            <div id="timeZone"></div>
+            <div id="timeZone">
+              <h1>{timeZone || "환영합니다."}</h1>
+            </div>
           </td>
         </tr>
       </tbody>
