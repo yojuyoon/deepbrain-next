@@ -1,0 +1,27 @@
+body {
+  min-height: 100%;
+  height: 100%;
+  font-family: "MinSans-Medium", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: inherit;
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  border: none;
+  background: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(45, 45, 45);
+}
+
+li {
+  list-style: none;
+  color: rgb(45, 45, 45);
+}
