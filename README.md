@@ -1,1 +1,9 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## deepbrain-express
+
+MERN Stack Project
+
+### Start
+
+```
+yarn dev
+```
